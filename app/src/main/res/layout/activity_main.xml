@@ -25,6 +25,40 @@
         android:text="Add event"
         android:backgroundTint="@color/dark_green"
         android:textColor="@color/white"
+        android:visibility="invisible"
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:id="@+id/event_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Event Name"
+        android:textAlignment="center"
         android:visibility="invisible"/>
+
+    <EditText
+        android:id="@+id/event_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textShortMessage"
+        android:text="Event Description"
+
+        android:textAlignment="center"
+        android:visibility="invisible"/>
+
+    <EditText
+        android:id="@+id/event_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="time"
+        android:text="Event Time"
+
+        android:textAlignment="center"
+        android:visibility="invisible"/>
+
 
 </LinearLayout>
