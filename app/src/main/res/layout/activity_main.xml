@@ -64,15 +64,14 @@
             <TimePicker
                 android:id="@+id/event_time"
                 android:layout_width="wrap_content"
-                android:layout_height="116dp"
+                android:layout_height="93dp"
                 android:layout_above="@+id/button"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="68dp"
-                android:layout_marginEnd="68dp"
+                android:layout_marginEnd="49dp"
                 android:layout_marginBottom="18dp"
-                android:timePickerMode="spinner"
-                 />
+                android:timePickerMode="spinner" />
 
             <EditText
                 android:id="@+id/event_name"
@@ -89,7 +88,7 @@
                 android:inputType="textPersonName"
                 android:text="Event Name"
                 android:textAlignment="center"
-                 />
+                android:visibility="visible" />
 
             <Button
                 android:id="@+id/button"
@@ -97,8 +96,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginEnd="140dp"
-                android:layout_marginBottom="14dp"
+                android:layout_marginEnd="138dp"
+                android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/brown"
                 android:text="submit"
                 android:textSize="10dp" />
