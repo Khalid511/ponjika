@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="bottom">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardElevation="50dp"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="296dp"
+                android:layout_height="45dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="27dp"
+                android:layout_marginBottom="89dp"
+                android:backgroundTint="@color/light_gray"
+                android:text="Set Reminder Time"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="30dp" />
+
+            <TimePicker
+                android:layout_width="match_parent"
+                android:layout_height="363dp"
+                android:layout_above="@+id/button3"
+                android:layout_marginBottom="101dp">
+
+            </TimePicker>
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="161dp"
+                android:layout_height="70dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="79dp"
+                android:layout_marginBottom="173dp"
+                android:layout_toStartOf="@+id/button4"
+                android:backgroundTint="@android:color/holo_green_dark"
+                android:text="Ok" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="137dp"
+                android:layout_height="70dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="173dp"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:text="Cancel" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
