@@ -47,12 +47,27 @@
             >
 
             <EditText
+                android:id="@+id/event_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/event_description"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="84dp"
+                android:layout_marginBottom="19dp"
+                android:background="@drawable/custom_input"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Event Name"
+                android:textAlignment="center"
+                android:visibility="visible" />
+
+            <EditText
                 android:id="@+id/event_description"
-                android:layout_width="251dp"
-                android:layout_height="79dp"
+                android:layout_width="225dp"
+                android:layout_height="104dp"
                 android:layout_above="@+id/reminder_time"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="50dp"
+                android:layout_marginEnd="76dp"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/custom_input"
                 android:ems="10"
@@ -67,32 +82,16 @@
                 android:layout_above="@+id/button"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="121dp"
-                android:layout_marginEnd="79dp"
-                android:layout_marginBottom="21dp"
-                android:text="Set Reminder"
-                android:textSize="15dp"
-                android:textColor="@color/black"
+                android:layout_marginStart="98dp"
+                android:layout_marginEnd="102dp"
+                android:layout_marginBottom="22dp"
+                android:background="@drawable/custom_button_gray"
                 android:drawableLeft="@drawable/ic_reminder"
+                android:text="Set Reminder"
+                android:textColor="@color/black"
+                android:textSize="15dp"
                 android:backgroundTint="@color/light_gray"
-                android:background="@drawable/custom_button_gray"/>
-
-            <EditText
-                android:id="@+id/event_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/event_description"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="84dp"
-                android:layout_marginBottom="19dp"
-                android:background="@drawable/custom_input"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Event Name"
-                android:textAlignment="center"
-                android:visibility="visible" />
+                />
 
             <Button
                 android:id="@+id/button"
@@ -100,8 +99,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginEnd="138dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="144dp"
+                android:layout_marginBottom="12dp"
                 android:backgroundTint="@color/brown"
                 android:text="submit"
                 android:textSize="10dp" />
