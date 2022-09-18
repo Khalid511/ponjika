@@ -85,12 +85,12 @@
                 android:layout_marginStart="98dp"
                 android:layout_marginEnd="102dp"
                 android:layout_marginBottom="22dp"
-                android:background="@drawable/custom_button_gray"
+
                 android:drawableLeft="@drawable/ic_reminder"
                 android:text="Set Reminder"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="15dp"
-                android:backgroundTint="@color/light_gray"
+                android:background="@drawable/custom_button_gray"
                 />
 
             <Button
