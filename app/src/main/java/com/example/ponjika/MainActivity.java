@@ -17,9 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
     TextView textview;
     CalendarView calendarview;
-    Button eventButton;
+    Button eventButton, reminder_time;
     EditText event_name, event_description;
-    TimePicker event_time;
     CardView view_card;
 
     @Override
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         eventButton = findViewById(R.id.event_button);
         event_name = findViewById(R.id.event_name);
         event_description = findViewById(R.id.event_description);
-        event_time = findViewById(R.id.event_time);
+        reminder_time = findViewById(R.id.reminder_time);
         view_card = findViewById(R.id.card_view);
 
         calendarview.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 //                        event_name.setVisibility(view.VISIBLE);
 //                        event_description.setVisibility(view.VISIBLE);
 //                        event_time.setVisibility(view.VISIBLE);
-                          event_time.setIs24HourView(true);
+
                     }
                 });
 
