@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView textview;
     CalendarView calendarview;
-    Button eventButton, time_reminder;
+    Button eventButton, time_reminder, buttonOk, buttonCancel;
     EditText event_name, event_description;
     CardView view_card;
 
@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         event_description = findViewById(R.id.event_description);
         time_reminder = findViewById(R.id.reminder_time);
         view_card = findViewById(R.id.card_view);
+        buttonOk = findViewById(R.id.ok_button);
+        buttonCancel = findViewById(R.id.cancel_button);
 
         calendarview.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
@@ -48,12 +50,13 @@ public class MainActivity extends AppCompatActivity {
                           view_card.setVisibility(view.VISIBLE);
 //                        event_name.setVisibility(view.VISIBLE);
 //                        event_description.setVisibility(view.VISIBLE);
-//                        event_time.setVisibility(view.VISIBLE);
+//                        event_time.setVisibility(view.VISIBL
                           time_reminder.setOnClickListener(new View.OnClickListener() {
                               @Override
                               public void onClick(View v) {
                                   Popupwindow window = new Popupwindow();
                                   window.showPopupwindow(v);
+
                               }
                           });
 
