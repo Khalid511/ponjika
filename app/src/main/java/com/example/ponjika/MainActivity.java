@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                               @Override
                               public void onClick(View v) {
                                   Popupwindow window = new Popupwindow();
-                                  window.showPopupwindow(v);
+                                  window.showPopupwindow(v, time_reminder);
 
                               }
                           });

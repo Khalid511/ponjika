@@ -7,12 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.TimePicker;
 
 public class Popupwindow {
 
-    Button buttonOk, buttonCancel, reminder;
+    Button buttonOk, buttonCancel;
+    TimePicker selectTime;
 
-    public void showPopupwindow(View view) {
+    public void showPopupwindow(View view, Button reminder) {
         LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(view.getContext().LAYOUT_INFLATER_SERVICE);
         View popupView = inflater.inflate(R.layout.popup_card_window_time, null);
 
@@ -30,12 +32,16 @@ public class Popupwindow {
          //set click operation on two buttons- Ok, Cancel
          buttonOk = (Button) popupView.findViewById(R.id.ok_button);
          buttonCancel = (Button) popupView.findViewById(R.id.cancel_button);
-         reminder = (Button) popupView.findViewById(R.id.reminder_time);
+         selectTime = (TimePicker) popupView.findViewById(R.id.select_time);
+
+         String hour = selectTime.getCurrentHour().toString();
+         String minute = selectTime.getCurrentMinute().toString();
 
          buttonOk.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                // reminder.setText("Time change");
+                 reminder.setText("reminder time - "+hour+":"+minute);
+                 reminder.setTextSize(11);
                  popupWindow.dismiss();
              }
          });

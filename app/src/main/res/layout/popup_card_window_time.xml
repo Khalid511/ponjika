@@ -34,6 +34,7 @@
                 android:textSize="30dp" />
 
             <TimePicker
+                android:id="@+id/select_time"
                 android:layout_width="match_parent"
                 android:layout_height="364dp"
 
