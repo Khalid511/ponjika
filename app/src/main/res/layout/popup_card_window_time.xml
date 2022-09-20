@@ -7,7 +7,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:cardElevation="50dp"
         app:cardCornerRadius="20dp"
         android:layout_margin="10dp"
@@ -15,17 +15,18 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="608dp"
 
             >
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/clicked_time"
                 android:layout_width="296dp"
                 android:layout_height="45dp"
+
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="27dp"
-                android:layout_marginBottom="89dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="86dp"
                 android:backgroundTint="@color/light_gray"
                 android:text="Set Reminder Time"
                 android:textAlignment="center"
@@ -34,21 +35,24 @@
 
             <TimePicker
                 android:layout_width="match_parent"
-                android:layout_height="363dp"
-                android:layout_above="@+id/button3"
-                android:layout_marginBottom="101dp">
+                android:layout_height="364dp"
+
+                android:layout_above="@+id/ok_button"
+                android:layout_below="@+id/clicked_time"
+                android:layout_marginTop="-41dp"
+                android:layout_marginBottom="75dp">
 
             </TimePicker>
 
             <Button
                 android:id="@+id/ok_button"
-                android:layout_width="161dp"
+                android:layout_width="220dp"
                 android:layout_height="70dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="7dp"
-                android:layout_marginEnd="79dp"
-                android:layout_marginBottom="173dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="29dp"
+                android:layout_marginBottom="1dp"
                 android:layout_toStartOf="@+id/cancel_button"
                 android:backgroundTint="@android:color/holo_green_dark"
                 android:text="Ok" />
@@ -59,8 +63,8 @@
                 android:layout_height="70dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="173dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="1dp"
                 android:backgroundTint="@android:color/holo_red_dark"
                 android:text="Cancel" />
 
