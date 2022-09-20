@@ -13,6 +13,7 @@ public class Popupwindow {
 
     Button buttonOk, buttonCancel;
     TimePicker selectTime;
+    String clickedTime = null;
 
     public void showPopupwindow(View view, Button reminder) {
         LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(view.getContext().LAYOUT_INFLATER_SERVICE);
@@ -34,14 +35,25 @@ public class Popupwindow {
          buttonCancel = (Button) popupView.findViewById(R.id.cancel_button);
          selectTime = (TimePicker) popupView.findViewById(R.id.select_time);
 
-         String hour = selectTime.getCurrentHour().toString();
-         String minute = selectTime.getCurrentMinute().toString();
+
+         selectTime.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+             @Override
+             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+                 if(hourOfDay>12)
+                     clickedTime = String.valueOf(hourOfDay-12) +":"+ String.valueOf(minute)+" pm";
+                 else
+                     clickedTime = String.valueOf(hourOfDay) +":"+ String.valueOf(minute)+" am";
+
+             }
+         });
 
          buttonOk.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                 reminder.setText("reminder time - "+hour+":"+minute);
-                 reminder.setTextSize(11);
+                 if(clickedTime!=null) {
+                     reminder.setText("reminder time - "+clickedTime);
+                     reminder.setTextSize(10);
+                 }
                  popupWindow.dismiss();
              }
          });
