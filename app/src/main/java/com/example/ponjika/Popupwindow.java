@@ -39,10 +39,13 @@ public class Popupwindow {
          selectTime.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
              @Override
              public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+                 String a = "";
+                 if(minute<10)
+                     a = "0";
                  if(hourOfDay>12)
-                     clickedTime = String.valueOf(hourOfDay-12) +":"+ String.valueOf(minute)+" pm";
+                     clickedTime = String.valueOf(hourOfDay-12) +":"+ a+String.valueOf(minute)+" pm";
                  else
-                     clickedTime = String.valueOf(hourOfDay) +":"+ String.valueOf(minute)+" am";
+                     clickedTime = String.valueOf(hourOfDay) +":"+ a+String.valueOf(minute)+" am";
 
              }
          });

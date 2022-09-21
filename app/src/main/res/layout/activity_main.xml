@@ -57,7 +57,7 @@
                 android:background="@drawable/custom_input"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Event Name"
+                android:hint="Event Name"
                 android:textAlignment="center"
                 android:visibility="visible" />
 
@@ -72,7 +72,7 @@
                 android:background="@drawable/custom_input"
                 android:ems="10"
                 android:inputType="textShortMessage"
-                android:text="Event Description"
+                android:hint="Event Description"
                 android:textAlignment="center" />
 
             <androidx.appcompat.widget.AppCompatButton
