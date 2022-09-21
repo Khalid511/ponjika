@@ -54,7 +54,7 @@ public class Popupwindow {
              @Override
              public void onClick(View v) {
                  if(clickedTime!=null) {
-                     reminder.setText("reminder time - "+clickedTime);
+                     reminder.setText(clickedTime);
                      reminder.setTextSize(10);
                  }
                  popupWindow.dismiss();

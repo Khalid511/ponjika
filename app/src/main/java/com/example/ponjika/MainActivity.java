@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -12,14 +13,16 @@ import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView textview;
     CalendarView calendarview;
-    Button eventButton, time_reminder, buttonOk, buttonCancel;
+    Button eventButton, time_reminder, buttonOk, buttonCancel, submitButton;
     EditText event_name, event_description;
     CardView view_card;
+    CalendarDB db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +40,15 @@ public class MainActivity extends AppCompatActivity {
         view_card = findViewById(R.id.card_view);
         buttonOk = findViewById(R.id.ok_button);
         buttonCancel = findViewById(R.id.cancel_button);
-
+        submitButton = findViewById(R.id.submit_button);
+        db = new CalendarDB(this);
+        //calendarview.setSelectedWeekBackgroundColor(Color.BLUE);
+        //calendarview.setWeekSeparatorLineColor(Color.BLACK);
         calendarview.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 String date =  "Clicked date\n"+String.valueOf(dayOfMonth) + "-" + String.valueOf(month) + "-" + String.valueOf(year);
+                String Date = String.valueOf(dayOfMonth) + "-" + String.valueOf(month) + "-" + String.valueOf(year);
                 textview.setText(date);
                 eventButton.setVisibility(view.VISIBLE);
                 eventButton.setOnClickListener(new View.OnClickListener() {
@@ -59,11 +66,24 @@ public class MainActivity extends AppCompatActivity {
 
                               }
                           });
-
+                        submitButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                //String date = Date;
+                                String time = time_reminder.getText().toString();
+                                String eventName = event_name.getText().toString();
+                                String eventDescription = event_description.getText().toString();
+                                boolean insertData = db.insertEvent(Date, time, eventName, eventDescription);
+                                if(insertData==true)
+                                    Toast.makeText(MainActivity.this, "New event is added", Toast.LENGTH_SHORT).show();
+                                else
+                                    Toast.makeText(MainActivity.this, "Error to add New event", Toast.LENGTH_SHORT).show();
+                            }
+                        });
 
                     }
-                });
 
+                });
             }
         });
     }
