@@ -88,13 +88,15 @@ public class MainActivity extends AppCompatActivity {
 
                 });
 
-//                showEvent.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        Cursor result = db.getData(Date);
-//
-//                    }
-//                });
+                showEvent.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Cursor result = db.getData(Date);
+                        PopupData popupData = new PopupData();
+                        popupData.showPopupData(v);
+
+                    }
+                });
             }
         });
     }
