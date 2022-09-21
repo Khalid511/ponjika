@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:text="DATE"
+            android:textAlignment="center"
+            />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:text="TIME"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:text="Event Name"
+            android:textAlignment="center"
+            />
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="540dp"
+            android:text="Event Description"
+            android:textAlignment="center"
+
+             />
+    </TableRow>
+
+</TableLayout>

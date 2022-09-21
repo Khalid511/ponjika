@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView textview;
     CalendarView calendarview;
-    Button eventButton, time_reminder, buttonOk, buttonCancel, submitButton;
+    Button eventButton, time_reminder, buttonOk, buttonCancel, submitButton, showEvent;
     EditText event_name, event_description;
     CardView view_card;
     CalendarDB db;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         buttonOk = findViewById(R.id.ok_button);
         buttonCancel = findViewById(R.id.cancel_button);
         submitButton = findViewById(R.id.submit_button);
+        showEvent = findViewById(R.id.show_event);
         db = new CalendarDB(this);
         //calendarview.setSelectedWeekBackgroundColor(Color.BLUE);
         //calendarview.setWeekSeparatorLineColor(Color.BLACK);
@@ -51,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 String Date = String.valueOf(dayOfMonth) + "-" + String.valueOf(month) + "-" + String.valueOf(year);
                 textview.setText(date);
                 eventButton.setVisibility(view.VISIBLE);
+                showEvent.setVisibility(view.VISIBLE);
                 eventButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -84,6 +87,14 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 });
+
+//                showEvent.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        Cursor result = db.getData(Date);
+//
+//                    }
+//                });
             }
         });
     }

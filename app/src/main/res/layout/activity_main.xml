@@ -18,18 +18,57 @@
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
+        android:layout_height="301dp"
+        android:weekSeparatorLineColor="@color/brown" />
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+    <!--        <Button-->
+<!--            android:id="@+id/show_event"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_marginEnd="29dp"-->
+<!--            android:backgroundTint="@android:color/darker_gray"-->
+<!--            android:text="Show events"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:visibility="invisible" />-->
+<!--    </RelativeLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weekSeparatorLineColor="@color/brown"
-        />
-    <Button
-        android:id="@+id/event_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add event"
-        android:backgroundTint="@color/dark_green"
-        android:textColor="@color/white"
-        android:visibility="invisible"
-        android:layout_gravity="center_horizontal"/>
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/event_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="150dp"
+            android:backgroundTint="@color/dark_green"
+            android:text="Add event"
+            android:textColor="@color/white"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/show_event"
+            android:layout_width="132dp"
+            android:layout_height="48dp"
+
+            android:layout_gravity="center"
+            android:layout_marginRight="15dp"
+            android:backgroundTint="@android:color/darker_gray"
+            android:text="Show Event"
+            android:textColor="@color/white"
+            android:visibility="invisible"
+            android:textSize="13dp"
+            />
+    </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
@@ -42,11 +81,11 @@
         android:visibility="invisible"
         >
 
+
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+            android:layout_width="378dp"
+            android:layout_height="325dp"
+            android:orientation="vertical">
 
             <EditText
                 android:id="@+id/event_name"
@@ -58,8 +97,8 @@
                 android:layout_marginBottom="19dp"
                 android:background="@drawable/custom_input"
                 android:ems="10"
-                android:inputType="textPersonName"
                 android:hint="Event Name"
+                android:inputType="textPersonName"
                 android:textAlignment="center"
                 android:visibility="visible" />
 
@@ -73,8 +112,8 @@
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/custom_input"
                 android:ems="10"
-                android:inputType="textShortMessage"
                 android:hint="Event Description"
+                android:inputType="textShortMessage"
                 android:textAlignment="center" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -87,15 +126,13 @@
                 android:layout_marginStart="98dp"
                 android:layout_marginEnd="102dp"
                 android:layout_marginBottom="22dp"
-
-                android:drawableLeft="@drawable/ic_reminder"
-                android:text="Set Reminder"
-                android:textColor="@color/black"
-                android:textSize="15dp"
-                android:textAlignment="center"
-                android:padding="15dp"
                 android:background="@drawable/custom_button_gray"
-                />
+                android:drawableLeft="@drawable/ic_reminder"
+                android:padding="15dp"
+                android:text="Set Reminder"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
             <!--move icon from left with padding 15dp-->
 
             <Button
@@ -111,6 +148,4 @@
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
-
-
 </LinearLayout>
