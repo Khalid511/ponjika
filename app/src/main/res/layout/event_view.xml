@@ -9,59 +9,18 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="1dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10dp"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="@color/purple_200"
+        app:cardCornerRadius="20dp"
         app:cardElevation="50dp">
 
         <ImageView
+            android:id="@+id/cross"
             android:layout_width="55dp"
             android:layout_height="40dp"
             android:layout_gravity="right"
-            android:onClick="exit"
-            android:src="@drawable/ic_baseline_clear_24"></ImageView>
+            android:src="@drawable/ic_baseline_clear_24">
 
-        <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:text="DATE"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/holo_blue_dark" />
-
-                <TextView
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:text="TIME"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/holo_orange_dark" />
-
-                <TextView
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:text="Event Name"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/holo_red_dark" />
-
-                <TextView
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:text="Event Description"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/holo_purple" />
-            </TableRow>
-        </TableLayout>
+        </ImageView>
     </androidx.cardview.widget.CardView>
 </LinearLayout>
