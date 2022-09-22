@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import org.w3c.dom.Text;
+
 
 public class CalendarDB extends SQLiteOpenHelper {
 
@@ -38,7 +40,7 @@ public class CalendarDB extends SQLiteOpenHelper {
 
         public Cursor getData(String date) {
             SQLiteDatabase db = this.getWritableDatabase();
-            Cursor cursor = db.rawQuery("select * from eventDetails where Date=date", null);
+            Cursor cursor = db.rawQuery("select * from eventDetails where Date = ?", new String[]{date});
             return cursor;
         }
     }

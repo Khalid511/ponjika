@@ -1,6 +1,7 @@
 package com.example.ponjika;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -49,8 +50,13 @@ public class MainActivity extends AppCompatActivity {
         calendarview.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                String date =  "Clicked date\n"+String.valueOf(dayOfMonth) + "-" + String.valueOf(month) + "-" + String.valueOf(year);
-                String Date = String.valueOf(dayOfMonth) + "-" + String.valueOf(month) + "-" + String.valueOf(year);
+                String check1 = "", check2="";
+                if(dayOfMonth<10)
+                    check1 = "0";
+                if(month<9)
+                    check2 = "0";
+                String date =  "Clicked date\n"+check1+String.valueOf(dayOfMonth) + "-" + check2+String.valueOf(month+1) + "-" + String.valueOf(year);
+                String Date = check1+String.valueOf(dayOfMonth) + "-" + check2+String.valueOf(month+1) + "-" + String.valueOf(year);
                 textview.setText(date);
                 eventButton.setVisibility(view.VISIBLE);
                 showEvent.setVisibility(view.VISIBLE);
@@ -92,8 +98,25 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Cursor result = db.getData(Date);
-                        PopupData popupData = new PopupData();
-                        popupData.showPopupData(v);
+//                        PopupData popupData = new PopupData();
+//                        popupData.showPopupData(v);
+                        if(result.getCount()==0)
+                            Toast.makeText(MainActivity.this, "Event list is empty", Toast.LENGTH_SHORT).show();
+                        StringBuffer stringBuffer = new StringBuffer();
+                        while(result.moveToNext()) {
+                            stringBuffer.append("Date- "+result.getString(0)+"\n");
+                            stringBuffer.append("Time- "+result.getString(1)+"\n");
+                            stringBuffer.append("Event Name- "+result.getString(2)+"\n");
+                            stringBuffer.append("Event Description- "+result.getString(3)+"\n");
+
+                            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                            builder.setMessage(stringBuffer);
+                            builder.show();
+                            //builder.s
+
+                           // System.out.println(stringBuffer.toString());
+                            stringBuffer.delete(0, stringBuffer.length());
+                        }
 
                     }
                 });
